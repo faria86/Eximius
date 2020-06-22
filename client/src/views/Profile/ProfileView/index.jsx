@@ -38,7 +38,7 @@ const ProfileView = (props) => {
                 {/* ADD LETTER IMAGE */}
               </>
             )}
-            <NavBar />
+            <NavBar props={props} />
           </>
         )}
       </div>

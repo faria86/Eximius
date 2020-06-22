@@ -162,7 +162,7 @@ class EventSingleView extends Component {
             </div>
           )}
         </div>
-        <NavBar />
+        <NavBar props={this.props}/>
       </>
     );
   }

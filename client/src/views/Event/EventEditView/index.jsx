@@ -146,7 +146,7 @@ class EditEventView extends Component {
           <button>Edit</button>
         </form>
       </div>
-        <NavBar />
+        <NavBar props={this.props} />
     </>
     );
   }
