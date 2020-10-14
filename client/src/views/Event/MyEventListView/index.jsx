@@ -34,15 +34,15 @@ class MyEventListView extends Component {
     return (
       <>
         <LogoBar updateUser={this.props.updateUser} />
-        {this.state.events && (
-          <div className='my-events'>
+        {(this.state.events.length && (
+          <div className="my-events">
             <h4>Events you are attending</h4>
             {this.state.events.map((event) => {
               return <EventList key={event._id} event={event.eventId} />;
             })}
           </div>
-        )}
-        <NavBar />
+        )) || <h4>You are not attending any events</h4>}
+        <NavBar props={this.props} />
       </>
     );
   }

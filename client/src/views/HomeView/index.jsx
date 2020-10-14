@@ -52,7 +52,7 @@ class HomeView extends Component {
                 })}
               </>
             )}
-            <NavBar />
+            <NavBar props={this.props} />
           </>
         )) || (
           <>

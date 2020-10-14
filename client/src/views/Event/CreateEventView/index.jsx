@@ -135,7 +135,7 @@ class CreateEventView extends Component {
             />
             <button>Create</button>
           </form>
-          <NavBar />
+          <NavBar props={this.props}/>
         </div>
       </>
     );
