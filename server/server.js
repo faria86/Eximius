@@ -6,8 +6,8 @@ const debug = require('debug')('server:server');
 const app = require('./app');
 const mongoose = require('mongoose');
 
-const PORT = parseInt(process.env.PORT, 10);
-const URI = process.env.MONGODB_URI;
+const PORT = process.env.PORT;
+const URI = process.env.DB_URI;
 
 const terminate = error => {
   if (error) debug(error);
@@ -58,17 +58,14 @@ const initiate = () => {
 };
 
 mongoose
-  .connect(URI, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-  })
+  .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     debug(`Database connected to URI "${URI}"`);
     initiate();
   })
   .catch(error => {
     console.error(`There was an error connecting the database to URI "${URI}"`);
+    console.log(error);
     debug(error);
     process.exit(1);
   });
